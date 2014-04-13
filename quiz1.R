@@ -21,4 +21,7 @@ download.file(url="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestau
 doc <- xmlTreeParse(xmlFile,useInternal=TRUE)
 rootNode <- xmlRoot(doc);
 xmlName(rootNode)
+rows <- xpathSApply(rootNode,"//zipcode",xmlValue)
+class(rows)
+length(rows[rows == 21231])
 
